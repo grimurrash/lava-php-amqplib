@@ -1,5 +1,56 @@
 # Changelog
 
+## [v3.4.0](https://github.com/php-amqplib/php-amqplib/tree/v3.4.0) (2022-10-18)
+
+[Full Changelog](https://github.com/php-amqplib/php-amqplib/compare/v3.3.1...v3.4.0)
+
+**Implemented enhancements:**
+
+- Add the ability to set the connection name through AMQPConnectionConfig [\#1035](https://github.com/php-amqplib/php-amqplib/pull/1035) ([i3bepb](https://github.com/i3bepb))
+
+**Closed issues:**
+
+- v3.3.0 heartbeat error [\#1029](https://github.com/php-amqplib/php-amqplib/issues/1029)
+
+**Merged pull requests:**
+
+- Missing PHPDoc param in AbstractConnection constructor [\#1033](https://github.com/php-amqplib/php-amqplib/pull/1033) ([i3bepb](https://github.com/i3bepb))
+- Split buffer and IO readers into separate classes [\#1031](https://github.com/php-amqplib/php-amqplib/pull/1031) ([ramunasd](https://github.com/ramunasd))
+
+## [v3.3.1](https://github.com/php-amqplib/php-amqplib/tree/v3.3.1) (2022-10-04)
+
+[Full Changelog](https://github.com/php-amqplib/php-amqplib/compare/v3.3.0...v3.3.1)
+
+**Fixed bugs:**
+
+- Allow disable heartbeats from client side [\#1030](https://github.com/php-amqplib/php-amqplib/pull/1030) ([ramunasd](https://github.com/ramunasd))
+
+**Closed issues:**
+
+- Flaky CI test runs [\#1027](https://github.com/php-amqplib/php-amqplib/issues/1027)
+
+## [v3.3.0](https://github.com/php-amqplib/php-amqplib/tree/v3.3.0) (2022-10-03)
+
+[Full Changelog](https://github.com/php-amqplib/php-amqplib/compare/v3.2.0...v3.3.0)
+
+**Implemented enhancements:**
+
+- Allow set socket send buffer size [\#1026](https://github.com/php-amqplib/php-amqplib/pull/1026) ([ramunasd](https://github.com/ramunasd))
+- Add capath SSL option support [\#1014](https://github.com/php-amqplib/php-amqplib/pull/1014) ([amino-garricklam](https://github.com/amino-garricklam))
+
+**Fixed bugs:**
+
+- Heartbeat of client overwrite without any conditions the one from server [\#1018](https://github.com/php-amqplib/php-amqplib/issues/1018)
+- Fix heartbeat negotiation [\#1024](https://github.com/php-amqplib/php-amqplib/pull/1024) ([ramunasd](https://github.com/ramunasd))
+- Throw connection exceptions on batch publish [\#983](https://github.com/php-amqplib/php-amqplib/pull/983) ([foment](https://github.com/foment))
+
+**Merged pull requests:**
+
+- Update codecov action to latest version [\#1028](https://github.com/php-amqplib/php-amqplib/pull/1028) ([ramunasd](https://github.com/ramunasd))
+- Upgrade toxiproxy, enable all tests on CI [\#1025](https://github.com/php-amqplib/php-amqplib/pull/1025) ([ramunasd](https://github.com/ramunasd))
+- chore: Set permissions for GitHub actions [\#1001](https://github.com/php-amqplib/php-amqplib/pull/1001) ([nathannaveen](https://github.com/nathannaveen))
+- Fix rate limiting [\#985](https://github.com/php-amqplib/php-amqplib/pull/985) ([lukebakken](https://github.com/lukebakken))
+
 ## [v3.2.0](https://github.com/php-amqplib/php-amqplib/tree/v3.2.0) (2022-03-10)
 
 [Full Changelog](https://github.com/php-amqplib/php-amqplib/compare/v3.1.2...v3.2.0)
@@ -73,12 +124,10 @@
 - How $channel-\>wait\(\) work on loop forever [\#939](https://github.com/php-amqplib/php-amqplib/issues/939)
 - The header isn't fragmented causing large headers to hit the maximum frame size. [\#934](https://github.com/php-amqplib/php-amqplib/issues/934)
 - Keeping a connection open for publishing [\#932](https://github.com/php-amqplib/php-amqplib/issues/932)
-- How to start a quorum queue? [\#921](https://github.com/php-amqplib/php-amqplib/issues/921)
 - prefetch\_count seems to consume always only 1 message [\#919](https://github.com/php-amqplib/php-amqplib/issues/919)
 - Can't connect to ssl amqp hosts. [\#918](https://github.com/php-amqplib/php-amqplib/issues/918)
 - Updating "phpseclib/phpseclib" is necessary! [\#914](https://github.com/php-amqplib/php-amqplib/issues/914)
 - README - Non-existant code of conduct file [\#913](https://github.com/php-amqplib/php-amqplib/issues/913)
-- How to get list of consumers with tags for a specific queue [\#910](https://github.com/php-amqplib/php-amqplib/issues/910)
 - consumer\_tag: Consumer identifier [\#909](https://github.com/php-amqplib/php-amqplib/issues/909)
 - AMQPLazyConnection::create\_connection does not work [\#798](https://github.com/php-amqplib/php-amqplib/issues/798)
 
@@ -195,6 +244,7 @@
 
 **Implemented enhancements:**
 
+- Tests should run with TLS enabled [\#758](https://github.com/php-amqplib/php-amqplib/issues/758)
 - Use docker containers for broker and proxy in travis CI tests [\#831](https://github.com/php-amqplib/php-amqplib/pull/831) ([ramunasd](https://github.com/ramunasd))
 
 **Fixed bugs:**
@@ -207,7 +257,6 @@
 
 - Does the library supports federation conf? [\#826](https://github.com/php-amqplib/php-amqplib/issues/826)
 - Publishing not happend after publishing to non-existent exchange [\#823](https://github.com/php-amqplib/php-amqplib/issues/823)
-- Tests should run with TLS enabled [\#758](https://github.com/php-amqplib/php-amqplib/issues/758)
 
 **Merged pull requests:**
 
@@ -735,108 +784,6 @@
 - Functional tests fail after upgrading to 2.7.1 and 2.7.2 [\#545](https://github.com/php-amqplib/php-amqplib/issues/545)
 - fwrite failure / not sure how to debug further [\#544](https://github.com/php-amqplib/php-amqplib/issues/544)
 
-# Previous releases
-
-## 2.7.2 - 2018-02-11
-
-[GitHub Milestone](https://github.com/php-amqplib/php-amqplib/milestone/5?closed=1)
-
-- PHP `5.3` compatibility [PR](https://github.com/php-amqplib/php-amqplib/issues/539)
-
-## 2.7.1 - 2018-02-01
-
-- Support PHPUnit 6 [PR](https://github.com/php-amqplib/php-amqplib/pull/530)
-- Use `tcp_nodelay` for `StreamIO` [PR](https://github.com/php-amqplib/php-amqplib/pull/517)
-- Pass connection timeout to `wait` method [PR](https://github.com/php-amqplib/php-amqplib/pull/512)
-- Fix possible indefinite waiting for data in StreamIO [PR](https://github.com/php-amqplib/php-amqplib/pull/423), [PR](https://github.com/php-amqplib/php-amqplib/pull/534)
-- Change protected method check_heartbeat to public [PR](https://github.com/php-amqplib/php-amqplib/pull/520)
-- Ensure access levels are consistent for calling `check_heartbeat` [PR](https://github.com/php-amqplib/php-amqplib/pull/535)
-
-## 2.7.0 - 2017-09-20
-
-### Added
-- Increased overall test coverage
-- Bring heartbeat support to socket connection
-- Add message delivery tag for publisher confirms
-- Add support for serializing DateTimeImmutable objects
-
-### Fixed
-- Fixed infinite loop on reconnect - check_heartbeat
-- Fixed signal handling exit example
-- Fixed exchange_unbind arguments
-- Fixed invalid annotation for channel_id
-- Fixed socket null error on php 5.3 version
-- Fixed timeout parameters on HHVM before calling stream_select
-
-### Changed
-- declare(ticks=1) no longer needed after PHP5.3 / amqplib 2.4.1
-- Minor DebugHelper improvements
-
-### Enhancements
-- Add extensions requirements to README.md
-- Add PHP 7.1 to Travis build
-- Reduce memory usage in StreamIO::write()
-- Re-enable heartbeats after reconnection
-
-## 2.6.3 - 2016-04-11
-
-### Added
-- Added the ability to set timeout as float
-
-### Fixed
-- Fixed restoring of error_handler on connection error
-
-### Enhancements
-- Verify read_write_timeout is at least 2x the heartbeat (if set)
-- Many PHPDoc fixes
-- Throw exception when trying to create an exchange on a closed connection
-
-## 2.6.2 - 2016-03-02
-
-### Added
-- Added AMQPLazySocketConnection
-- AbstractConnection::getServerProperties method to retrieve server properties.
-- AMQPReader::wait() will throw IOWaitException on stream_select failure
-- Add PHPDocs to Auto-generated Protocol Classes
-
-### Fixed
-- Disable heartbeat when closing connection
-- Fix for when the default error handler is not restored in StreamIO
-
-### Enhancements
-- Cleanup tests and improve testing performance
-- Confirm received valid frame type on wait_frame in AbstractConnection
-- Update DEMO files closer to PSR-2 standards
-
-## 2.6.1 - 2016-02-12
-
-### Added
-- Add constants for delivery modes to AMQPMessage
-
-### Fixed
-- Fix some PHPDoc problems
-- AbstractCollection value de/encoding on PHP7
-- StreamIO: fix "bad write retry" in SSL mode
-
-### Enhancements
-- Update PHPUnit configuration
-- Add scrutinizer-ci configuration
-- Organizational changes from videlalvaro to php-amqplib org
-- Minor complexity optimizations, code organization, and code cleanup
-
-## 2.6.0 - 2015-09-23
-
-### BC Breaking Changes
-- The `AMQPStreamConnection` class now throws `ErrorExceptions` when errors happen while reading/writing to the network.
-
-### Added
-- Heartbeat frames will decrease the timeout used when calling wait_channel - heartbeat frames do not reset the timeout
-
-### Fixed
-- Declared the class AbstractChannel as being an abstract class
-- Reads, writes and signals respond immediately instead of waiting for a timeout
-- Fatal error in some cases on Channel.wait with timeout when RabbitMQ restarted
-- Remove warning when trying to push a deferred frame
 
 
 \* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*

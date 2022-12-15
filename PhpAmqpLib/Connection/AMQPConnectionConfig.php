@@ -72,6 +72,9 @@ final class AMQPConnectionConfig
     /** @var resource|null */
     private $streamContext;
 
+    /** @var int */
+    private $sendBufferSize = 0;
+
     /** @var bool */
     private $dispatchSignals = true;
 
@@ -109,6 +112,9 @@ final class AMQPConnectionConfig
 
     /** @var string|null */
     private $sslCiphers;
+
+    /** @var string */
+    private $connectionName = '';
 
     /**
      * Output all networks packets for debug purposes.
@@ -340,6 +346,27 @@ final class AMQPConnectionConfig
         $this->streamContext = $streamContext;
     }
 
+    /**
+     * @return int
+     * @since 3.2.1
+     */
+    public function getSendBufferSize(): int
+    {
+        return $this->sendBufferSize;
+    }
+
+    /**
+     * Socket send buffer size. Set 0 to keep system default.
+     * @param int $sendBufferSize
+     * @return void
+     * @since 3.2.1
+     */
+    public function setSendBufferSize(int $sendBufferSize): void
+    {
+        self::assertGreaterOrEq($sendBufferSize, 0, 'sendBufferSize');
+        $this->sendBufferSize = $sendBufferSize;
+    }
+
     public function isSignalsDispatchEnabled(): bool
     {
         return $this->dispatchSignals;
@@ -481,5 +508,21 @@ final class AMQPConnectionConfig
         if ($value < $limit) {
             throw new InvalidArgumentException(sprintf('Parameter "%s" must be greater than zero', $param));
         }
+    }
+
+    /**
+     * @return string
+     */
+    public function getConnectionName(): string
+    {
+        return $this->connectionName;
+    }
+
+    /**
+     * @param string $connectionName
+     */
+    public function setConnectionName(string $connectionName): void
+    {
+        $this->connectionName = $connectionName;
     }
 }
