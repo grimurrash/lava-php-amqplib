@@ -3,6 +3,7 @@ composer.lock
 phpunit.xml
 build/
 docs/
+.idea/
 tools/
 phpDocumentor.phar
 
